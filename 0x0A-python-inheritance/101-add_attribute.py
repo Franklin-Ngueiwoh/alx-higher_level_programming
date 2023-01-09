@@ -1,14 +1,13 @@
 #!/usr/bin/python3
+"""Module that adds a new attribute to an object if it’s possible"""
 
 
-def add_attribute(obj, name, value):
-    """adds an attribute to the class if possible
-        -> aka is
+def add_attribute(obj, attr, value):
+    """Add new attribute to an object if possible
+
+       Raises:
+           TypeError: if the object can’t have new attribute
     """
-    builtins = (str, int, complex, bool, float, list,
-                tuple, dict, set, frozenset, type, object)
-    for _type in builtins:
-        if type(obj) is _type:
-            raise TypeError("can't add new attribute")
-
-    object.__setattr__(obj, name, value)
+    if not hasattr(obj, "__dict__"):
+        raise TypeError("can't add new attribute")
+    setattr(obj, attr, value)

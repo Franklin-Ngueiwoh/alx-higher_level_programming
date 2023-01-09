@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""Defines a class BaseGeometry"""
 
 
-class BaseGeometry():
-    """for use with shapes. Super class.
-    """
+class BaseGeometry:
+    """This class has no content yet"""
     pass
